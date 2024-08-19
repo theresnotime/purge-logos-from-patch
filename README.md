@@ -1,0 +1,1 @@
+Given a change ID (e.g. 1063916), fetch images from https://gerrit.wikimedia.org/r/changes/{change_id}/revisions/current/files and then generate purge commands.
