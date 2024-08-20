@@ -3,8 +3,8 @@ import json
 import requests
 
 
-# 1063916
 def get_files(change_id: str):
+    """Get image files from a Gerrit change"""
     headers = {"Accept": "application/json"}
     resp = requests.get(
         f"https://gerrit.wikimedia.org/r/changes/{change_id}/revisions/current/files/",
@@ -21,6 +21,7 @@ def get_files(change_id: str):
 
 
 def generate_commands(change_id: str, images: str):
+    """Generate purge commands for a list of images"""
     commands = []
     for image in images:
         command = f"echo 'https://en.wikipedia.org/{image}' | mwscript purgeList.php &&"
